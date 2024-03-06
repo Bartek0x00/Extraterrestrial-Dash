@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://bd3b2y8kqaqhp"]
+
+[ext_resource type="Texture2D" uid="uid://4m4lofjtteia" path="res://Enemy/Enemy1/Enemy1_idle.png" id="1"]
+[ext_resource type="Texture2D" path="res://Enemy/Enemy1/ENEMY_IDLE_LEFT.png" id="2"]
+[ext_resource type="Texture2D" path="res://Enemy/Enemy1/ENEMY_WALKING2_LEFT.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dx3wtvmgqvmop" path="res://Enemy/Enemy1/Enemy1_walking2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://byfybldmkmtxu" path="res://Enemy/Enemy1/Enemy1_walking1.png" id="5"]
+[ext_resource type="Texture2D" path="res://Enemy/Enemy1/ENEMY_WALKING_LEFT.png" id="6"]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(32.75, 47.625)
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
+"loop": true,
+"name": &"Idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
+"loop": true,
+"name": &"Idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
+"loop": true,
+"name": &"Walking_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}],
+"loop": true,
+"name": &"Walking_right",
+"speed": 5.0
+}]
+
+[node name="Enemy1" type="Node2D"]
+z_index = -2
+z_as_relative = false
+position = Vector2(-1, -1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(5.625, -8.1875)
+shape = SubResource("2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-3, 0)
+sprite_frames = SubResource("1")
+animation = &"Walking_right"
+frame = 3

@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0okl37v3djrd"]
+
+[ext_resource type="Texture2D" uid="uid://mxcgcwrryp1o" path="res://Player/Jumping.png" id="1_o4ekk"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wsamo"]
+[ext_resource type="Texture2D" uid="uid://bnosujv7d8res" path="res://Player/Standing.png" id="2_0id5r"]
+[ext_resource type="Texture2D" uid="uid://ubndyjariv6p" path="res://Player/Walking2.png" id="3_iiodb"]
+[ext_resource type="Texture2D" uid="uid://62v2a3iwkl31" path="res://Player/Walking.png" id="4_hoc8d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ru2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o4ekk")
+}],
+"loop": true,
+"name": &"Jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0id5r")
+}],
+"loop": true,
+"name": &"Standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iiodb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0id5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hoc8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0id5r")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2w8r"]
+size = Vector2(27, 63)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_wsamo")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2ru2o")
+animation = &"Jumping"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+editor_draw_drag_margin = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 2
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_l2w8r")
