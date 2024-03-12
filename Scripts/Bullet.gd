@@ -1,16 +1,14 @@
-extends CharacterBody2D
+extends Area2D
 
-const SPEED = 500
-
-var direction = Vector2.RIGHT
-
-func _ready():
-	velocity = direction * SPEED
+@export var bullet_direction = 1
+@export var bullet_speed = 200
 
 func _physics_process(delta):
-	move_and_slide()
+	position += Vector2((bullet_direction * bullet_speed * delta), 0)
 
-func set_direction(new_direction: Vector2) -> void:
-	direction = new_direction
-	velocity = direction * SPEED
+func _on_body_entered(body):
+	print(body)
+	queue_free()
 
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()
