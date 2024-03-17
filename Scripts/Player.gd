@@ -5,12 +5,14 @@ extends CharacterBody2D
 
 # Get the global gravity used for other nodes
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var direction
+var direction = 0
 var shoot_direction = 1
 var left_bullet_scene = preload("res://Scenes/Bullet_left.tscn")
 var right_bullet_scene = preload("res://Scenes/Bullet_right.tscn")
 
 func _physics_process(delta):
+	if Input.is_action_pressed("escape"):
+		pause_game()
 	if Input.is_action_pressed("left"):
 		direction = -1
 		shoot_direction = -1
@@ -50,3 +52,12 @@ func shoot(shooting_direction):
 		var right_bullet = right_bullet_scene.instantiate()
 		get_parent().add_child(right_bullet)
 		right_bullet.position = (position + Vector2(30, 5)) 
+
+func pause_game():
+	get_tree().paused = true
+	$Pause_menu.show()
+	$Pause_menu.grab()
+
+func resume_game():
+	get_tree().paused = false
+	$Pause_menu.hide()
