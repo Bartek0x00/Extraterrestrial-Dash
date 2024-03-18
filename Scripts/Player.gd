@@ -3,38 +3,44 @@ extends CharacterBody2D
 @export var speed = 300.0
 @export var jump_velocity = -300.0
 
-# Get the global gravity used for other nodes
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = 980
 var direction = 0
 var shoot_direction = 1
 var left_bullet_scene = preload("res://Scenes/Bullet_left.tscn")
 var right_bullet_scene = preload("res://Scenes/Bullet_right.tscn")
+var mobile_ui_scene = preload("res://Scenes/Mobile_UI.tscn")
+var pause_menu_scene = preload("res://Scenes/Pause_menu.tscn")
+var pause_menu
 
 func _ready():
 	if OS.get_name() == "Android":
-		$Camera2D/Mobile_UI.show()
+		$Camera2D.add_child(mobile_ui_scene.instantiate())
 
-func _physics_process(delta):
-	if Input.is_action_pressed("escape"):
-		pause_game()
-	if Input.is_action_pressed("left"):
+func _input(event):
+	if event.is_action("left"):
 		direction = -1
 		shoot_direction = -1
-	elif Input.is_action_pressed("right"):
+	elif event.is_action("right"):
 		direction = 1
 		shoot_direction = 1
-	else:
-		direction = 0
-		
-	if not is_on_floor():
-		velocity.y += gravity * delta
 
-	if Input.is_action_pressed("jump") and is_on_floor():
+	if event.is_action("jump") and is_on_floor():
 		velocity.y = jump_velocity
 		$Sprite.play("Jumping")
 
-	if Input.is_action_just_pressed("ui_accept"):
+	if event.is_action_pressed("escape"):
+		pause_game()
+
+	if event.is_action_pressed("shoot"):
 		shoot(shoot_direction)
+
+func _unhandled_input(event):
+	if event.is_action_released("left") or event.is_action_released("right"):
+		direction = 0
+
+func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
 
 	if direction:
 		velocity.x = direction * speed
@@ -59,9 +65,10 @@ func shoot(shooting_direction):
 
 func pause_game():
 	get_tree().paused = true
-	$Camera2D/Pause_menu.show()
-	$Camera2D/Pause_menu.grab()
+	pause_menu = pause_menu_scene.instantiate()
+	$Camera2D.add_child(pause_menu)
 
 func resume_game():
 	get_tree().paused = false
-	$Camera2D/Pause_menu.hide()
+	$Camera2D.remove_child(pause_menu)
+	direction = 0

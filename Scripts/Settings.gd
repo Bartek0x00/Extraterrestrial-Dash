@@ -6,3 +6,6 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_end"):
 		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+
+func _on_return_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
