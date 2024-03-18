@@ -10,6 +10,10 @@ var shoot_direction = 1
 var left_bullet_scene = preload("res://Scenes/Bullet_left.tscn")
 var right_bullet_scene = preload("res://Scenes/Bullet_right.tscn")
 
+func _ready():
+	if OS.get_name() == "Android":
+		$Camera2D/Mobile_UI.show()
+
 func _physics_process(delta):
 	if Input.is_action_pressed("escape"):
 		pause_game()
@@ -55,9 +59,9 @@ func shoot(shooting_direction):
 
 func pause_game():
 	get_tree().paused = true
-	$Pause_menu.show()
-	$Pause_menu.grab()
+	$Camera2D/Pause_menu.show()
+	$Camera2D/Pause_menu.grab()
 
 func resume_game():
 	get_tree().paused = false
-	$Pause_menu.hide()
+	$Camera2D/Pause_menu.hide()

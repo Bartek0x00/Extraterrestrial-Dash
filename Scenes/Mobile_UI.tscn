@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://crugrq8ufqasr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_a1mog"]
+specular_color = Color(0.486275, 1, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qbbun"]
+specular_color = Color(0.223529, 1, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w3or2"]
+specular_color = Color(0.152941, 1, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sg0xs"]
+specular_color = Color(0.262745, 1, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_60v6q"]
+specular_color = Color(0.192157, 1, 1, 1)
+
+[node name="Mobile_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2(480, 275)
+scale = Vector2(48, 48)
+texture_normal = SubResource("CanvasTexture_a1mog")
+action = "left"
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2(559, 276)
+scale = Vector2(48, 48)
+texture_normal = SubResource("CanvasTexture_qbbun")
+action = "right"
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2(39, 214)
+scale = Vector2(48, 48)
+texture_normal = SubResource("CanvasTexture_w3or2")
+action = "jump"
+
+[node name="Shoot" type="TouchScreenButton" parent="."]
+position = Vector2(40, 286)
+scale = Vector2(48, 48)
+texture_normal = SubResource("CanvasTexture_sg0xs")
+action = "shoot"
+
+[node name="Pause" type="TouchScreenButton" parent="."]
+position = Vector2(19, 19)
+scale = Vector2(48, 48)
+texture_normal = SubResource("CanvasTexture_60v6q")
+action = "escape"

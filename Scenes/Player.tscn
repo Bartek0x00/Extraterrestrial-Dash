@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0okl37v3djrd"]
+[gd_scene load_steps=10 format=3 uid="uid://d0okl37v3djrd"]
 
 [ext_resource type="Texture2D" uid="uid://mxcgcwrryp1o" path="res://Player/Jumping.png" id="1_o4ekk"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wsamo"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ubndyjariv6p" path="res://Player/Walking2.png" id="3_iiodb"]
 [ext_resource type="Texture2D" uid="uid://62v2a3iwkl31" path="res://Player/Walking.png" id="4_hoc8d"]
 [ext_resource type="PackedScene" uid="uid://bpvio3wo7d4ae" path="res://Scenes/Pause_menu.tscn" id="6_2cqby"]
+[ext_resource type="PackedScene" uid="uid://crugrq8ufqasr" path="res://Scenes/Mobile_UI.tscn" id="7_bv4ku"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ru2o"]
 animations = [{
@@ -61,7 +62,13 @@ frame_progress = 0.644089
 [node name="Camera2D" type="Camera2D" parent="."]
 editor_draw_drag_margin = true
 
-[node name="Pause_menu" parent="." instance=ExtResource("6_2cqby")]
+[node name="Mobile_UI" parent="Camera2D" instance=ExtResource("7_bv4ku")]
+offset_left = -295.0
+offset_top = -174.0
+offset_right = -295.0
+offset_bottom = -174.0
+
+[node name="Pause_menu" parent="Camera2D" instance=ExtResource("6_2cqby")]
 visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="."]
