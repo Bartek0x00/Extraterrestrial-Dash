@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://boja3cn0bic1e"]
 
-[ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_f7xpg"]
-[ext_resource type="Texture2D" uid="uid://b051nw6261e8p" path="res://Player/Plazma.png" id="1_ru61f"]
+[ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_g3nho"]
+[ext_resource type="Texture2D" uid="uid://b051nw6261e8p" path="res://Player/Plazma.png" id="2_0dv13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aimyl"]
 size = Vector2(31, 17)
 
-[node name="Bullet_left" type="Area2D"]
+[node name="Bullet" type="Area2D"]
 collision_layer = 8
 collision_mask = 5
-script = ExtResource("1_f7xpg")
+script = ExtResource("1_g3nho")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ru61f")
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_0dv13")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_aimyl")
 

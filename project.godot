@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Game_Jam"
+config/name="Extraterrestrial-Dash"
 run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.2")
 

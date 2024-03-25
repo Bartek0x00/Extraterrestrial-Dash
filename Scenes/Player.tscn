@@ -65,3 +65,12 @@ light_mask = 0
 visibility_layer = 2
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_l2w8r")
+
+[node name="Marker" type="Marker2D" parent="Collision"]
+position = Vector2(32.5, 7.5)
+
+[node name="RayCast" type="RayCast2D" parent="Collision"]
+position = Vector2(0.5, -0.5)
+target_position = Vector2(50, 0)
+hit_from_inside = true
+collide_with_areas = true

@@ -1,10 +1,14 @@
 extends Area2D
 
-@export var bullet_direction = 1
-@export var bullet_speed = 500
+var direction = 1
+var speed = 500
+
+func _ready():
+	$Sprite.scale.x = direction
+	$Collision.scale.x = direction
 
 func _physics_process(delta):
-	position += Vector2((bullet_direction * bullet_speed * delta), 0)
+	position += Vector2((direction * speed * delta), 0)
 
 func _on_body_entered(body):
 	queue_free()
