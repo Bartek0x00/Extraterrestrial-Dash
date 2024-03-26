@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsm30mt0b0t5a"
-path="res://.godot/imported/EXTREME_SCORPION.png-9a0f89da0e44e57b4e7637b6297800a1.ctex"
+uid="uid://ckd0fkwxhj5x0"
+path="res://.godot/imported/Enemy3_easy.png-bdb401c1dbb2f14e3b74e2f942d08aad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Enemy3/EXTREME_SCORPION.png"
-dest_files=["res://.godot/imported/EXTREME_SCORPION.png-9a0f89da0e44e57b4e7637b6297800a1.ctex"]
+source_file="res://Enemy/Enemy3/Enemy3_easy.png"
+dest_files=["res://.godot/imported/Enemy3_easy.png-bdb401c1dbb2f14e3b74e2f942d08aad.ctex"]
 
 [params]
 

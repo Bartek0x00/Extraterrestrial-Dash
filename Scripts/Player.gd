@@ -49,19 +49,19 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 	move_and_slide()
 
-func shoot(shooting_direction):
+func shoot(shooting_direction: int) -> void:
 	if not $Collision/RayCast.is_colliding():
 		var bullet = bullet_scene.instantiate()
 		bullet.position = $Collision/Marker.global_position
 		bullet.direction = shooting_direction
 		get_parent().add_child(bullet)
 
-func pause_game():
+func pause_game() -> void:
 	get_tree().paused = true
 	pause_menu = pause_menu_scene.instantiate()
 	$Camera2D.add_child(pause_menu)
 
-func resume_game():
+func resume_game() -> void:
 	get_tree().paused = false
 	$Camera2D.remove_child(pause_menu)
 	direction = 0

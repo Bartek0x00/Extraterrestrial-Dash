@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7mf5m0k1t5tt"
-path="res://.godot/imported/MEDIUM_SCORPION_RIGHT.png-33ce37a61e20ee0beaa8204d06c826ff.ctex"
+path="res://.godot/imported/Enemy3_med.png-f384b30c5c58e6ae614243aa66618c43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Enemy3/MEDIUM_SCORPION_RIGHT.png"
-dest_files=["res://.godot/imported/MEDIUM_SCORPION_RIGHT.png-33ce37a61e20ee0beaa8204d06c826ff.ctex"]
+source_file="res://Enemy/Enemy3/Enemy3_med.png"
+dest_files=["res://.godot/imported/Enemy3_med.png-f384b30c5c58e6ae614243aa66618c43.ctex"]
 
 [params]
 

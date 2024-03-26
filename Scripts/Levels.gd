@@ -1,5 +1,7 @@
 extends Node2D
+class_name Level
 
-func _ready():
+func create_player(coord: Vector2i) -> void:
 	var player = preload("res://Scenes/Player.tscn").instantiate()
+	player.position = coord
 	get_tree().get_root().add_child(player)

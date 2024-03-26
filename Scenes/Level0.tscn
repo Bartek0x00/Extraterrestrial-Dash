@@ -1,19 +1,19 @@
 [gd_scene load_steps=21 format=3 uid="uid://dsre8t4ml0l70"]
 
-[ext_resource type="Script" path="res://Scripts/Level1.gd" id="1_eah3f"]
-[ext_resource type="Texture2D" uid="uid://1mwhu2jagge4" path="res://Tiles/Stone.png" id="1_kwxsr"]
-[ext_resource type="Texture2D" uid="uid://xvk1d5ujevqp" path="res://Tiles/Sand.png" id="2_fcshr"]
-[ext_resource type="Texture2D" uid="uid://d1ro642d060bf" path="res://Tiles/Metal_Shine.png" id="3_etu72"]
-[ext_resource type="Texture2D" uid="uid://b2qsjngqi5syj" path="res://Tiles/Metal_Matte.png" id="4_bw6jg"]
-[ext_resource type="Texture2D" uid="uid://cu0axl2q4okgq" path="res://Tiles/Grass.png" id="5_3j3lp"]
-[ext_resource type="Texture2D" uid="uid://c44o534t5eowc" path="res://Tiles/Cactus.png" id="6_l1hw7"]
-[ext_resource type="Texture2D" uid="uid://dru8to5ap5wij" path="res://Tiles/Brick_Grey.png" id="7_kaf8k"]
-[ext_resource type="Texture2D" uid="uid://fs24ip2iswj" path="res://Tiles/Brick_Red.png" id="8_ffuvh"]
-[ext_resource type="Texture2D" uid="uid://dmujumjhucrxg" path="res://Tiles/Void.png" id="10_fl7w1"]
+[ext_resource type="Script" path="res://Scripts/Level0.gd" id="1_uhi1c"]
+[ext_resource type="Texture2D" uid="uid://1mwhu2jagge4" path="res://Tiles/Stone.png" id="2_xnwlo"]
+[ext_resource type="Texture2D" uid="uid://xvk1d5ujevqp" path="res://Tiles/Sand.png" id="3_n1e1g"]
+[ext_resource type="Texture2D" uid="uid://d1ro642d060bf" path="res://Tiles/Metal_Shine.png" id="4_och4h"]
+[ext_resource type="Texture2D" uid="uid://b2qsjngqi5syj" path="res://Tiles/Metal_Matte.png" id="5_fqscm"]
+[ext_resource type="Texture2D" uid="uid://cu0axl2q4okgq" path="res://Tiles/Grass.png" id="6_g06vb"]
+[ext_resource type="Texture2D" uid="uid://c44o534t5eowc" path="res://Tiles/Cactus.png" id="7_lw1j7"]
+[ext_resource type="Texture2D" uid="uid://dru8to5ap5wij" path="res://Tiles/Brick_Grey.png" id="8_k7x46"]
+[ext_resource type="Texture2D" uid="uid://fs24ip2iswj" path="res://Tiles/Brick_Red.png" id="9_e62wd"]
+[ext_resource type="Texture2D" uid="uid://dmujumjhucrxg" path="res://Tiles/Void.png" id="10_kjaes"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hfb2"]
 resource_name = "Stone"
-texture = ExtResource("1_kwxsr")
+texture = ExtResource("2_xnwlo")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -22,7 +22,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o32dt"]
 resource_name = "Sand"
-texture = ExtResource("2_fcshr")
+texture = ExtResource("3_n1e1g")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -31,7 +31,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gdm5"]
 resource_name = "Metal_Shine"
-texture = ExtResource("3_etu72")
+texture = ExtResource("4_och4h")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -40,7 +40,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pl8ae"]
 resource_name = "Metal_Matte"
-texture = ExtResource("4_bw6jg")
+texture = ExtResource("5_fqscm")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -49,7 +49,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b8umc"]
 resource_name = "Grass"
-texture = ExtResource("5_3j3lp")
+texture = ExtResource("6_g06vb")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -58,7 +58,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eldxm"]
 resource_name = "Cactus"
-texture = ExtResource("6_l1hw7")
+texture = ExtResource("7_lw1j7")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -67,7 +67,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_koi7b"]
 resource_name = "Brick_Grey"
-texture = ExtResource("7_kaf8k")
+texture = ExtResource("8_k7x46")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -76,7 +76,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4e21x"]
 resource_name = "Brick_Red"
-texture = ExtResource("8_ffuvh")
+texture = ExtResource("9_e62wd")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -85,7 +85,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgr5i"]
 resource_name = "Void"
-texture = ExtResource("10_fl7w1")
+texture = ExtResource("10_kjaes")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -106,8 +106,8 @@ sources/6 = SubResource("TileSetAtlasSource_koi7b")
 sources/7 = SubResource("TileSetAtlasSource_4e21x")
 sources/8 = SubResource("TileSetAtlasSource_hgr5i")
 
-[node name="Level1" type="Node2D"]
-script = ExtResource("1_eah3f")
+[node name="Level0" type="Node2D"]
+script = ExtResource("1_uhi1c")
 
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 0
