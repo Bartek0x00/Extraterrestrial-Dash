@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.2")
 [autoload]
 
 F12Handler="*res://Scripts/F12_handler.gd"
+Score="*res://Scripts/Score.gd"
 
 [display]
 

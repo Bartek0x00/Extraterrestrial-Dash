@@ -16,6 +16,7 @@ func _ready():
 		$Camera2D.add_child(mobile_ui_scene.instantiate())
 
 func _physics_process(delta):
+	$Camera2D/Label.text = "Score %s" % Score.score
 	if Input.is_action_pressed("left"):
 		direction = -1
 		shoot_direction = -1
