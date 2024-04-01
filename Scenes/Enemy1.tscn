@@ -12,14 +12,6 @@ size = Vector2(37, 63)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_pcl2u")
-}],
-"loop": true,
-"name": &"Standing",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("2_a1jon")
 }, {
 "duration": 1.0,
@@ -32,13 +24,11 @@ animations = [{
 "texture": ExtResource("1_pcl2u")
 }],
 "loop": true,
-"name": &"Walking",
+"name": &"Walk",
 "speed": 5.0
 }]
 
-[node name="Enemy1" type="CharacterBody2D"]
-collision_layer = 4
-collision_mask = 11
+[node name="Enemy1" type="RigidBody2D"]
 script = ExtResource("1_b2coq")
 metadata/_edit_group_ = true
 
@@ -49,4 +39,4 @@ shape = SubResource("RectangleShape2D_0h2vj")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j2vhu")
-animation = &"Walking"
+animation = &"Walk"

@@ -1,4 +1,5 @@
 extends Level
 
 func _ready():
-	create_player(Vector2i(0, 0))
+	spawn(preload("res://Scenes/Player.tscn"), Vector2i(0, 0))
+	

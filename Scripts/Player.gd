@@ -51,7 +51,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func shoot(shooting_direction: int) -> void:
-	if not $Collision/RayCast.is_colliding():
+	if not $Collision/ShapeCast.is_colliding():
 		var bullet = bullet_scene.instantiate()
 		bullet.position = $Collision/Marker.global_position
 		bullet.direction = shooting_direction
@@ -66,3 +66,12 @@ func resume_game() -> void:
 	get_tree().paused = false
 	$Camera2D.remove_child(pause_menu)
 	direction = 0
+
+func save():
+	var save_dict = {
+		"filename" : get_scene_file_path(),
+		"level" : Score.level,
+		"pos_x" : position.x,
+		"pos_y" : position.y,
+	}
+	return save_dict
