@@ -18,6 +18,8 @@ config/features=PackedStringArray("4.2")
 
 F12Handler="*res://Scripts/F12_handler.gd"
 Score="*res://Scripts/Score.gd"
+Spawner="*res://Scripts/Spawner.gd"
+GlobalSettings="*res://Scripts/Global_settings.gd"
 
 [display]
 
@@ -25,7 +27,7 @@ window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/always_on_top=true
 window/stretch/mode="viewport"
-window/stretch/aspect="ignore"
+window/stretch/aspect="expand"
 
 [filesystem]
 

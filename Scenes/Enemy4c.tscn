@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bghcu7svg4ijq"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_fhedg"]
+[ext_resource type="Texture2D" uid="uid://b88i662yrtoh" path="res://Enemy/Enemy4/Enemy4c/Enemy4c_sword.png" id="2_58yi1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fga7q"]
+size = Vector2(17, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrtjl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_58yi1")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="Enemy4c" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 11
+lock_rotation = true
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_fhedg")
+score = 12
+metadata/_edit_group_ = true
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_fga7q")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lrtjl")
+animation = &"Walk"

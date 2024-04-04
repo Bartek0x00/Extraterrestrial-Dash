@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0okl37v3djrd"]
+[gd_scene load_steps=12 format=3 uid="uid://d0okl37v3djrd"]
 
 [ext_resource type="Texture2D" uid="uid://mxcgcwrryp1o" path="res://Player/Jumping.png" id="1_o4ekk"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wsamo"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ubndyjariv6p" path="res://Player/Walking2.png" id="3_iiodb"]
 [ext_resource type="Texture2D" uid="uid://62v2a3iwkl31" path="res://Player/Walking.png" id="4_hoc8d"]
 [ext_resource type="FontFile" uid="uid://dck8m01lw7rl7" path="res://Font/Minecraftchmc-dBlX.ttf" id="6_huhrn"]
+[ext_resource type="PackedScene" uid="uid://crugrq8ufqasr" path="res://Scenes/Mobile_UI.tscn" id="7_psy6w"]
+[ext_resource type="PackedScene" uid="uid://bpvio3wo7d4ae" path="res://Scenes/Pause_menu.tscn" id="8_bdhk0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ru2o"]
 animations = [{
@@ -49,9 +51,9 @@ size = Vector2(27, 63)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04ix8"]
 size = Vector2(20, 32)
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 21
 script = ExtResource("1_wsamo")
 metadata/_edit_group_ = true
 
@@ -61,30 +63,36 @@ animation = &"Walking"
 frame = 2
 frame_progress = 0.644089
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
 editor_draw_drag_margin = true
 
-[node name="Label" type="Label" parent="Camera2D"]
-offset_left = 216.0
-offset_top = -171.0
-offset_right = 302.0
-offset_bottom = -143.0
-theme_override_fonts/font = ExtResource("6_huhrn")
-theme_override_font_sizes/font_size = 32
-text = "Score: 0"
-metadata/_edit_use_anchors_ = true
-
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Shape" type="CollisionShape2D" parent="."]
 light_mask = 0
 visibility_layer = 2
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_l2w8r")
 
-[node name="ShapeCast" type="ShapeCast2D" parent="Collision"]
+[node name="ShapeCast" type="ShapeCast2D" parent="Shape"]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_04ix8")
 target_position = Vector2(40, 0)
+collision_mask = 21
 collide_with_areas = true
 
-[node name="Marker" type="Marker2D" parent="Collision"]
+[node name="Marker" type="Marker2D" parent="Shape"]
 position = Vector2(32.5, 7.5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 174.0
+offset_top = -171.0
+offset_right = 260.0
+offset_bottom = -143.0
+theme_override_fonts/font = ExtResource("6_huhrn")
+theme_override_font_sizes/font_size = 32
+text = "Score 0/100"
+
+[node name="Mobile_UI" parent="." instance=ExtResource("7_psy6w")]
+visible = false
+
+[node name="Pause_menu" parent="." instance=ExtResource("8_bdhk0")]
+visible = false

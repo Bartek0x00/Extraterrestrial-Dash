@@ -8,7 +8,8 @@ func _input(event):
 		get_tree().quit()
 
 func _on_Start_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Level" + Score.level + ".tscn")
+	get_tree().change_scene_to_file("res://Scenes/Instructions.tscn")
+	Score.score = 0
 
 func _on_Options_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Settings.tscn")

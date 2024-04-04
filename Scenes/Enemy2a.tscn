@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmolygeubyvmt"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy_shooter.gd" id="1_76m75"]
+[ext_resource type="Texture2D" uid="uid://bfnfmpsal6pyw" path="res://Enemy/Enemy2/Enemy2a/Enemy2a_bow.png" id="2_wyteq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b25vn"]
+size = Vector2(21, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px3y7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dyyy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wyteq")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="Enemy2a" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 11
+lock_rotation = true
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_76m75")
+score = 24
+metadata/_edit_group_ = true
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(3.5, 0.5)
+shape = SubResource("RectangleShape2D_b25vn")
+
+[node name="ShapeCast" type="ShapeCast2D" parent="Shape"]
+shape = SubResource("RectangleShape2D_px3y7")
+target_position = Vector2(32, 0)
+collide_with_areas = true
+
+[node name="Marker" type="Marker2D" parent="Shape"]
+position = Vector2(16, 0)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dyyy0")
+animation = &"Walk"

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbbvtqper4312"
-path="res://.godot/imported/Enemy2a_knife.png-87639e2983c7c556e14dd6e1e3ac99a2.ctex"
+path="res://.godot/imported/Enemy2b_knife.png-9bfa47efccc149101e475fcaf490eb7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Enemy2a/Enemy2a_knife.png"
-dest_files=["res://.godot/imported/Enemy2a_knife.png-87639e2983c7c556e14dd6e1e3ac99a2.ctex"]
+source_file="res://Enemy/Enemy2/Enemy2b/Enemy2b_knife.png"
+dest_files=["res://.godot/imported/Enemy2b_knife.png-9bfa47efccc149101e475fcaf490eb7d.ctex"]
 
 [params]
 

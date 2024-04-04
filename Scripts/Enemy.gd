@@ -1,16 +1,24 @@
 extends RigidBody2D
 class_name Enemy
 
-var speed: int = 100
+@export var speed: int = 100
 var direction: int = 1
 var old_pos: Vector2 = Vector2.ZERO
-var score: int = 0
+@export var score: int = 0
 
 
 func _ready():
 	add_to_group("Enemy")
 	$Sprite.play("Walk")
-	self.body_entered.connect(_on_body_entered)
+	body_entered.connect(_on_body_entered)
+	var enabler = VisibleOnScreenEnabler2D.new()
+	enabler.rect = Rect2(
+		-GlobalSettings.draw_distance, 
+		-(0.8 * GlobalSettings.draw_distance),
+		2 * GlobalSettings.draw_distance,
+		GlobalSettings.draw_distance
+	)
+	add_child(enabler)
 
 func _physics_process(delta: float):
 	var new_pos: Vector2 = global_position
@@ -24,7 +32,6 @@ func _physics_process(delta: float):
 	old_pos = new_pos
 
 func _on_body_entered(body: Node):
-	queue_free()
 	if body.is_in_group("Player"):
 		body.queue_free()
-
+		Spawner.spawn(Vector2i(0, 0))

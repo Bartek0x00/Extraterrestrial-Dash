@@ -1,22 +1,20 @@
 extends CharacterBody2D
 
 @export var speed = 300.0
-@export var jump_velocity = -300.0
 
+var jump_velocity = -300.0
 var gravity = 980
 var direction = 0
 var shoot_direction = 1
-var bullet_scene = preload("res://Scenes/Bullet.tscn")
-var mobile_ui_scene = preload("res://Scenes/Mobile_UI.tscn")
-var pause_menu_scene = preload("res://Scenes/Pause_menu.tscn")
-var pause_menu
+var bullet_scene = preload("res://Scenes/Player_bullet.tscn")
 
 func _ready():
-	if OS.get_name() == "Android" or "Web":
-		$Camera2D.add_child(mobile_ui_scene.instantiate())
+	if OS.get_name() == "Web" or OS.get_name() == "Android":
+		$Mobile_UI.show()
+	add_to_group("Player")
 
 func _physics_process(delta):
-	$Camera2D/Label.text = "Score %s" % Score.score
+	$Label.text = "Score %s/100" % Score.score
 	if Input.is_action_pressed("left"):
 		direction = -1
 		shoot_direction = -1
@@ -42,7 +40,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * speed
 		$Sprite.scale.x = direction
-		$Collision.scale.x = direction
+		$Shape.scale.x = direction
 		$Sprite.play("Walking")
 	elif velocity.y > -100:
 		$Sprite.play("Standing")
@@ -51,27 +49,18 @@ func _physics_process(delta):
 	move_and_slide()
 
 func shoot(shooting_direction: int) -> void:
-	if not $Collision/ShapeCast.is_colliding():
+	if not $Shape/ShapeCast.is_colliding():
 		var bullet = bullet_scene.instantiate()
-		bullet.position = $Collision/Marker.global_position
+		bullet.position = $Shape/Marker.global_position
 		bullet.direction = shooting_direction
 		get_parent().add_child(bullet)
 
 func pause_game() -> void:
 	get_tree().paused = true
-	pause_menu = pause_menu_scene.instantiate()
-	$Camera2D.add_child(pause_menu)
+	$Pause_menu.show()
+	$Pause_menu/ColorRect/Resume.grab_focus()
 
 func resume_game() -> void:
 	get_tree().paused = false
-	$Camera2D.remove_child(pause_menu)
+	$Pause_menu.hide()
 	direction = 0
-
-func save():
-	var save_dict = {
-		"filename" : get_scene_file_path(),
-		"level" : Score.level,
-		"pos_x" : position.x,
-		"pos_y" : position.y,
-	}
-	return save_dict

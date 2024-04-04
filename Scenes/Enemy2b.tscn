@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgoesuig4cq3q"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_nni1l"]
+[ext_resource type="Texture2D" uid="uid://dbbvtqper4312" path="res://Enemy/Enemy2/Enemy2b/Enemy2b_knife.png" id="2_lt28a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fga7q"]
+size = Vector2(17, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a5nft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lt28a")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="Enemy2b" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 11
+lock_rotation = true
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_nni1l")
+score = 8
+metadata/_edit_group_ = true
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 0.5)
+shape = SubResource("RectangleShape2D_fga7q")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a5nft")
+animation = &"Walk"

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://boja3cn0bic1e"]
+
+[ext_resource type="Script" path="res://Scripts/Player_bullet.gd" id="1_l58ye"]
+[ext_resource type="Texture2D" uid="uid://b051nw6261e8p" path="res://Player/Plazma.png" id="2_maxhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aimyl"]
+size = Vector2(31, 17)
+
+[node name="Bullet" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 21
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_l58ye")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_maxhk")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_aimyl")
+
+[node name="Notifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.5, 1.5)
+scale = Vector2(1.55, 0.85)

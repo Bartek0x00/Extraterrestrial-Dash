@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci4vtf4gkjo2m"]
+
+[ext_resource type="Script" path="res://Scripts/Final.gd" id="1_swn55"]
+[ext_resource type="FontFile" uid="uid://dck8m01lw7rl7" path="res://Font/Minecraftchmc-dBlX.ttf" id="1_xwsvv"]
+
+[node name="Final" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_swn55")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.0
+offset_top = -80.0
+offset_right = 252.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_xwsvv")
+theme_override_font_sizes/normal_font_size = 32
+text = "That's right, you won, there is nothing further to do here. However the game is in early development phase, so follow it's github page, and see you soon in the next update. "
+
+[node name="Main_Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 256.0
+offset_right = 504.0
+offset_bottom = 287.0
+focus_neighbor_left = NodePath("../Github")
+theme_override_fonts/font = ExtResource("1_xwsvv")
+theme_override_font_sizes/font_size = 32
+text = "Main Menu"
+
+[node name="Github" type="Button" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 256.0
+offset_right = 191.0
+offset_bottom = 294.0
+focus_neighbor_right = NodePath("../Main_Menu")
+theme_override_fonts/font = ExtResource("1_xwsvv")
+theme_override_font_sizes/font_size = 32
+text = "Github
+"
+
+[connection signal="pressed" from="Main_Menu" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Github" to="." method="_on_github_pressed"]
