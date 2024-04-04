@@ -3,14 +3,14 @@
 // that they need an Internet connection to run the project if desired.
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const CACHE_VERSION = "1712256062|10577799697";
+const CACHE_VERSION = "1712256763|34994941";
 const CACHE_PREFIX = "Extraterrestrial-sw-cache-";
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const OFFLINE_URL = "Extraterrestrial-Dash.offline.html";
 // Files that will be cached on load.
 const CACHED_FILES = ["Extraterrestrial-Dash.html","Extraterrestrial-Dash.js","Extraterrestrial-Dash.offline.html","Extraterrestrial-Dash.icon.png","Extraterrestrial-Dash.apple-touch-icon.png","Extraterrestrial-Dash.worker.js","Extraterrestrial-Dash.audio.worklet.js"];
 // Files that we might not want the user to preload, and will only be cached on first load.
-const CACHABLE_FILES = ["Extraterrestrial-Dash.wasm","Extraterrestrial-Dash.pck"];
+const CACHABLE_FILES = ["Extraterrestrial-Dash.wasm","Extraterrestrial-Dash.pck","Extraterrestrial-Dash.side.wasm"];
 const FULL_CACHE = CACHED_FILES.concat(CACHABLE_FILES);
 
 self.addEventListener("install", (event) => {
