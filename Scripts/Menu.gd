@@ -2,9 +2,6 @@ extends Control
 
 func _ready():
 	get_node("Start").grab_focus()
-	if OS.get_name() == "Web":
-		OS.set_restart_on_exit(true)
-		Window.MODE_MAXIMIZED
 
 func _input(event):
 	if event.is_action_pressed("ui_end"):
