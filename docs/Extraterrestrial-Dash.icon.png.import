@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d38oc4ngasets"
-path="res://.godot/imported/Extraterrastrial-Dash.png-718aea2e88a9f4eec0de34713434a38f.ctex"
+uid="uid://c8qgj3fox5rjf"
+path="res://.godot/imported/Extraterrestrial-Dash.icon.png-36564c067d99ff9460d70b260009402d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/Extraterrastrial-Dash.png"
-dest_files=["res://.godot/imported/Extraterrastrial-Dash.png-718aea2e88a9f4eec0de34713434a38f.ctex"]
+source_file="res://docs/Extraterrestrial-Dash.icon.png"
+dest_files=["res://.godot/imported/Extraterrestrial-Dash.icon.png-36564c067d99ff9460d70b260009402d.ctex"]
 
 [params]
 
