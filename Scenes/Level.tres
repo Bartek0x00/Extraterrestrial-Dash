@@ -1,0 +1,106 @@
+[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://bxymsa2co45y0"]
+
+[ext_resource type="Texture2D" uid="uid://1mwhu2jagge4" path="res://Tiles/Stone.png" id="1_ym65s"]
+[ext_resource type="Texture2D" uid="uid://xvk1d5ujevqp" path="res://Tiles/Sand.png" id="2_pcobc"]
+[ext_resource type="Texture2D" uid="uid://d1ro642d060bf" path="res://Tiles/Metal_Shine.png" id="3_0vb6c"]
+[ext_resource type="Texture2D" uid="uid://b2qsjngqi5syj" path="res://Tiles/Metal_Matte.png" id="4_jo8kn"]
+[ext_resource type="Texture2D" uid="uid://cu0axl2q4okgq" path="res://Tiles/Grass.png" id="5_es8df"]
+[ext_resource type="Texture2D" uid="uid://c44o534t5eowc" path="res://Tiles/Cactus.png" id="6_2ll4b"]
+[ext_resource type="Texture2D" uid="uid://dru8to5ap5wij" path="res://Tiles/Brick_Grey.png" id="7_qa22h"]
+[ext_resource type="Texture2D" uid="uid://fs24ip2iswj" path="res://Tiles/Brick_Red.png" id="8_lnctr"]
+[ext_resource type="Texture2D" uid="uid://dmujumjhucrxg" path="res://Tiles/Void.png" id="9_8v8is"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hfb2"]
+resource_name = "Stone"
+texture = ExtResource("1_ym65s")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o32dt"]
+resource_name = "Sand"
+texture = ExtResource("2_pcobc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gdm5"]
+resource_name = "Metal_Shine"
+texture = ExtResource("3_0vb6c")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pl8ae"]
+resource_name = "Metal_Matte"
+texture = ExtResource("4_jo8kn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b8umc"]
+resource_name = "Grass"
+texture = ExtResource("5_es8df")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eldxm"]
+resource_name = "Cactus"
+texture = ExtResource("6_2ll4b")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_koi7b"]
+resource_name = "Brick_Grey"
+texture = ExtResource("7_qa22h")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4e21x"]
+resource_name = "Brick_Red"
+texture = ExtResource("8_lnctr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgr5i"]
+resource_name = "Void"
+texture = ExtResource("9_8v8is")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 30
+sources/0 = SubResource("TileSetAtlasSource_2hfb2")
+sources/1 = SubResource("TileSetAtlasSource_o32dt")
+sources/2 = SubResource("TileSetAtlasSource_0gdm5")
+sources/3 = SubResource("TileSetAtlasSource_pl8ae")
+sources/4 = SubResource("TileSetAtlasSource_b8umc")
+sources/5 = SubResource("TileSetAtlasSource_eldxm")
+sources/6 = SubResource("TileSetAtlasSource_koi7b")
+sources/7 = SubResource("TileSetAtlasSource_4e21x")
+sources/8 = SubResource("TileSetAtlasSource_hgr5i")

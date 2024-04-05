@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://jvkrxkq8e446"]
 
 [ext_resource type="Script" path="res://Scripts/Bullet_enemy.gd" id="1_g70ly"]
-[ext_resource type="Texture2D" uid="uid://dru8to5ap5wij" path="res://Tiles/Brick_Grey.png" id="2_oidi3"]
+[ext_resource type="Texture2D" uid="uid://c1vcec15ac25s" path="res://Enemy/Enemy2/Enemy2a/Enemy2a_arrow.png" id="2_i3tds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvsde"]
-size = Vector2(32, 32)
+size = Vector2(32, 14)
 
-[node name="Enemy2a_bullet" type="RigidBody2D"]
+[node name="Enemy4a_bullet" type="RigidBody2D"]
 collision_layer = 16
 collision_mask = 15
 gravity_scale = 0.0
@@ -20,11 +20,10 @@ speed = 400
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_oidi3")
+position = Vector2(0, 0.5)
+texture = ExtResource("2_i3tds")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_wvsde")
 
 [node name="Notifier" type="VisibleOnScreenNotifier2D" parent="."]

@@ -8,4 +8,4 @@ func _ready():
 		You need to kill the enemies to get the points." % str(Score.level + 1)
 
 func _on_accept_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Level0.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level" + str(Score.level) + ".tscn")

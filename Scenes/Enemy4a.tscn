@@ -41,7 +41,7 @@ target_position = Vector2(32, 0)
 collide_with_areas = true
 
 [node name="Marker" type="Marker2D" parent="Shape"]
-position = Vector2(16, 0)
+position = Vector2(32, 0)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dehru")
