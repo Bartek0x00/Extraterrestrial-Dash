@@ -25,6 +25,7 @@ max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_fhedg")
 score = 12
+max_health = 2
 metadata/_edit_group_ = true
 
 [node name="Shape" type="CollisionShape2D" parent="."]

@@ -5,7 +5,6 @@ var direction: int = 1
 @export var speed: int = 500
 
 func _ready():
-	add_to_group("Enemy_bullet")
 	$Sprite.scale.x = direction
 	$Shape.scale.x = direction
 	body_entered.connect(_on_body_entered)

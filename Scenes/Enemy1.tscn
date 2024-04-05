@@ -38,6 +38,7 @@ max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_ov78w")
 score = 16
+max_health = 3
 metadata/_edit_group_ = true
 
 [node name="Shape" type="CollisionShape2D" parent="."]

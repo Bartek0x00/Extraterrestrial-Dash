@@ -332,6 +332,7 @@ rotates = false
 
 [node name="Enemy4b" type="Path2D" parent="."]
 curve = SubResource("Curve2D_q2ya4")
+metadata/_edit_group_ = true
 
 [node name="Enemy4b" type="PathFollow2D" parent="Enemy4b"]
 position = Vector2(3439, 48)
