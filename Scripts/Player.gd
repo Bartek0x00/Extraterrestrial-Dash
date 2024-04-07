@@ -10,11 +10,11 @@ var bullet_scene = preload("res://Scenes/Player_bullet.tscn")
 
 func _ready():
 	if OS.get_name() == "Web" or OS.get_name() == "Android":
-		$Mobile_UI.show()
+		$Camera/Mobile_UI.show()
 	add_to_group("Player")
 
 func _physics_process(delta):
-	$Label.text = "Score %s/100" % Score.score
+	$Camera/Label.text = "Score %s/100" % Score.score
 	if Input.is_action_pressed("left"):
 		direction = -1
 		shoot_direction = -1
@@ -57,10 +57,10 @@ func shoot(shooting_direction: int) -> void:
 
 func pause_game() -> void:
 	get_tree().paused = true
-	$Pause_menu.show()
-	$Pause_menu/ColorRect/Resume.grab_focus()
+	$Camera/Pause_menu.show()
+	$Camera/Pause_menu/ColorRect/Resume.grab_focus()
 
 func resume_game() -> void:
 	get_tree().paused = false
-	$Pause_menu.hide()
+	$Camera/Pause_menu.hide()
 	direction = 0

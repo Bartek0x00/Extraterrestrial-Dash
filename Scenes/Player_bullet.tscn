@@ -6,14 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aimyl"]
 size = Vector2(31, 17)
 
-[node name="Bullet" type="RigidBody2D"]
+[node name="Bullet" type="Area2D"]
 collision_layer = 8
 collision_mask = 21
-gravity_scale = 0.0
-freeze = true
-freeze_mode = 1
-max_contacts_reported = 1
-contact_monitor = true
 script = ExtResource("1_l58ye")
 metadata/_edit_group_ = true
 

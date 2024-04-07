@@ -64,7 +64,28 @@ frame = 2
 frame_progress = 0.644089
 
 [node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-1, 0)
+offset = Vector2(0, -64)
 editor_draw_drag_margin = true
+
+[node name="Mobile_UI" parent="Camera" instance=ExtResource("7_psy6w")]
+visible = false
+offset_top = -244.0
+offset_bottom = -244.0
+
+[node name="Label" type="Label" parent="Camera"]
+offset_left = 174.0
+offset_top = -235.0
+offset_right = 304.0
+offset_bottom = -207.0
+theme_override_fonts/font = ExtResource("6_huhrn")
+theme_override_font_sizes/font_size = 32
+text = "Score 0/100"
+
+[node name="Pause_menu" parent="Camera" instance=ExtResource("8_bdhk0")]
+visible = false
+offset_top = -80.0
+offset_bottom = -44.0
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -81,18 +102,3 @@ collide_with_areas = true
 
 [node name="Marker" type="Marker2D" parent="Shape"]
 position = Vector2(32.5, 7.5)
-
-[node name="Label" type="Label" parent="."]
-offset_left = 174.0
-offset_top = -171.0
-offset_right = 260.0
-offset_bottom = -143.0
-theme_override_fonts/font = ExtResource("6_huhrn")
-theme_override_font_sizes/font_size = 32
-text = "Score 0/100"
-
-[node name="Mobile_UI" parent="." instance=ExtResource("7_psy6w")]
-visible = false
-
-[node name="Pause_menu" parent="." instance=ExtResource("8_bdhk0")]
-visible = false

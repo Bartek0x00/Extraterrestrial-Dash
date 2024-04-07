@@ -1,4 +1,5 @@
-extends RigidBody2D
+extends Area2D
+
 class_name Enemy
 
 @export var speed: int = 100
@@ -34,17 +35,20 @@ func _physics_process(delta: float) -> void:
 		direction = -1
 	$Sprite.scale.x = direction
 	$Shape.scale.x = direction
-	get_parent().progress += speed * delta
+	move(delta)
 	old_pos = new_pos
+
+func move(delta):
+	get_parent().progress += speed * delta
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		body.queue_free()
 		Spawner.spawn(Vector2i(0, 0))
 
-func damage(amount: int) -> int:
-	if health - amount > 0:
-		health -= amount
+func damage() -> int:
+	if health - 1 > 0:
+		health -= 1
 		health_bar.value = health
 		return 0
 	else:

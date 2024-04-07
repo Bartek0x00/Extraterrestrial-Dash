@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7mf5m0k1t5tt"
-path="res://.godot/imported/Enemy3_med.png-0156252fc66daa02e75f4355f2c77fcc.ctex"
+uid="uid://4blmo7ed8h4h"
+path="res://.godot/imported/tileset.png-38925d485de814b530acb5216eddf0fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Enemy3/Enemy3b/Enemy3_med.png"
-dest_files=["res://.godot/imported/Enemy3_med.png-0156252fc66daa02e75f4355f2c77fcc.ctex"]
+source_file="res://Levels/Level1/tileset.png"
+dest_files=["res://.godot/imported/tileset.png-38925d485de814b530acb5216eddf0fa.ctex"]
 
 [params]
 

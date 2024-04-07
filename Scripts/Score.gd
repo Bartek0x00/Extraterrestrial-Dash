@@ -1,7 +1,7 @@
 extends Node
 
-const MAX_LEVEL: int = 1
-var level: int = 1
+const MAX_LEVEL: int = 2
+var level: int = 0
 var score: int = 0
 
 func add_score(amount: int):
@@ -15,4 +15,5 @@ func add_score(amount: int):
 		level += 1
 		get_tree().change_scene_to_file("res://Scenes/Level" + str(level) + ".tscn")
 	else:
+		level = 0
 		get_tree().change_scene_to_file("res://Scenes/Final.tscn")

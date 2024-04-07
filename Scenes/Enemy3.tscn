@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://br0tgxmtk8a58"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy_mutator.gd" id="1_dxho8"]
+[ext_resource type="Texture2D" uid="uid://7mf5m0k1t5tt" path="res://Enemy/Enemy3/Enemy3_med.png" id="2_bmtcj"]
+[ext_resource type="Texture2D" uid="uid://ckd0fkwxhj5x0" path="res://Enemy/Enemy3/Enemy3_easy.png" id="2_tmvr2"]
+[ext_resource type="Texture2D" uid="uid://bb0537f5wyfuf" path="res://Enemy/Enemy3/Enemy3_hard.png" id="3_7br8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyqsc"]
+size = Vector2(27, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cusoa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tmvr2")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7br8k")
+}],
+"loop": true,
+"name": &"Walk1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bmtcj")
+}],
+"loop": true,
+"name": &"Walk2",
+"speed": 5.0
+}]
+
+[node name="Enemy3" type="Area2D"]
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_dxho8")
+speed_arr = Array[int]([100, 75, 50])
+max_health = 3
+metadata/_edit_group_ = true
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_nyqsc")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cusoa")
+animation = &"Walk1"

@@ -17,12 +17,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy4c" type="RigidBody2D"]
+[node name="Enemy4c" type="Area2D"]
 collision_layer = 4
 collision_mask = 11
-lock_rotation = true
-max_contacts_reported = 1
-contact_monitor = true
 script = ExtResource("1_fhedg")
 score = 12
 max_health = 2

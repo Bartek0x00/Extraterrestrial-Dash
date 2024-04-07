@@ -17,12 +17,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy2b" type="RigidBody2D"]
+[node name="Enemy2b" type="Area2D"]
 collision_layer = 4
 collision_mask = 11
-lock_rotation = true
-max_contacts_reported = 1
-contact_monitor = true
 script = ExtResource("1_nni1l")
 score = 8
 metadata/_edit_group_ = true
